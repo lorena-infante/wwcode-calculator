@@ -24,38 +24,39 @@
     <div class="app_container_border mx-5">
       <div class="app_container_result px-3 py-2 text-end">
         <div class="app_container_result_numbers">
-          <div class="h1 m-0 app_container_result_total">Result</div>
-          <div class="h6 m-0 app_container_result_summary">summ</div>
+          <div id="result" class="h1 m-0 app_container_result_total">Result</div>
+          <div id="summary" class="h6 m-0 app_container_result_summary">summ</div>
         </div>
       </div>
       <div class="app_container_buttons p-3">
 
         <div class="app_container_buttons app_container_numbers">
-          <button class="app_container_buttons_number">7</button>
-          <button class="app_container_buttons_number">8</button>
-          <button class="app_container_buttons_number">9</button>
-          <button class="app_container_buttons_operator">DEL</button>
-          <button class="app_container_buttons_number">4</button>
-          <button class="app_container_buttons_number">5</button>
-          <button class="app_container_buttons_number">6</button>
-          <button class="app_container_buttons_operator">+</button>
-          <button class="app_container_buttons_number">1</button>
-          <button class="app_container_buttons_number">2</button>
-          <button class="app_container_buttons_number">3</button>
-          <button class="app_container_buttons_operator">-</button>
-          <button class="app_container_buttons_number">.</button>
-          <button class="app_container_buttons_number">0</button>
-          <button class="app_container_buttons_number">/</button>
-          <button class="app_container_buttons_operator">X</button>
+          <button id="seven" class="app_container_buttons_number" onclick="addNumber(7)">7</button>
+          <button id="eight" class="app_container_buttons_number" onclick="addNumber(8)">8</button>
+          <button id="nine" class="app_container_buttons_number" onclick="addNumber(9)">9</button>
+          <button id="del" class="app_container_buttons_operator" onclick="addOperator('del')">DEL</button>
+          <button id="four" class="app_container_buttons_number" onclick="addNumber(4)">4</button>
+          <button id="five" class="app_container_buttons_number" onclick="addNumber(5)">5</button>
+          <button id="six" class="app_container_buttons_number" onclick="addNumber(6)">6</button>
+          <button id="add" class="app_container_buttons_operator" onclick="addOperator('+')">+</button>
+          <button id="one" class="app_container_buttons_number" onclick="addNumber(1)">1</button>
+          <button id="two" class="app_container_buttons_number" onclick="addNumber(2)">2</button>
+          <button id="three" class="app_container_buttons_number" onclick="addNumber(3)">3</button>
+          <button id="minus" class="app_container_buttons_operator" onclick="addOperator('-')">-</button>
+          <button id="decimal" class="app_container_buttons_number" onclick="addOperator('.')">.</button>
+          <button id="zero" class="app_container_buttons_number" onclick="addNumber(0)">0</button>
+          <button id="divide" class="app_container_buttons_number" onclick="addOperator('/')">/</button>
+          <button id="times" class="app_container_buttons_operator" onclick="addOperator('x')">X</button>
         </div>
         <div class="app_container_buttons app_container_operators">
-          <button class="app_container_buttons_operator btn_reset">RESET</button>
-          <button class="app_container_buttons_operator">=</button>
+          <button id="reset" class="app_container_buttons_operator btn_reset"
+            onclick="addOperator('res')">RESET</button>
+          <button id="equals" class="app_container_buttons_operator" onclick="addOperator('=')">=</button>
         </div>
       </div>
     </div>
   </div>
-  <script type="module" src="/main.js"></script>
+  <script type="text/javascript" src="/main.js"></script>
 </body>
 
 </html>
