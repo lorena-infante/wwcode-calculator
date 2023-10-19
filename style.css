@@ -4,12 +4,13 @@
   --purple: #9E14A0;
   --light-purple: #F0D8F0;
   --white: #FFFFFF;
-  --black:#000000;
+  --black: #000000;
 }
 
 body {
+  font-family: 'Josefin Sans', sans-serif;
   margin: 0;
-  padding: 0; 
+  padding: 0;
 }
 
 .title {
@@ -28,24 +29,66 @@ body {
 }
 
 .app_container_border {
-  border: 0.4rem solid var(--dark-purple);
-  border-radius: 0.5rem;
+  border: 1rem solid var(--dark-purple);
+  border-radius: 2rem;
 }
+
 .app_container_result {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 2fr;
-  border-bottom: 0.3rem solid var(--dark-purple);
+  border-bottom: 1rem solid var(--dark-purple);
+  background-color: #816082;
+  color: var(--white);
+  border-top-right-radius: 0.7rem;
+  border-top-left-radius: 0.7rem;
+  width: 100%;
+  z-index: 30;
 }
+
+.app_container_result_total {
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.app_container_result_summary {
+  font-size: 20px;
+  font-weight: 500;
+}
+
 .app_container_buttons {
   display: grid;
   gap: 0.5rem;
 }
-.app_container_numbers{
+
+.app_container_buttons_number {
+  padding: 0.3rem;
+  background-color: var(--light-purple);
+  color: var(--purple);
+  font-weight: 700;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.app_container_buttons_operator {
+  background-color: var(--purple);
+  color: var(--white);
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.7rem;
+}
+.btn_reset {
+  background-color: var(--dark-purple);
+  
+}
+.app_container_numbers {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
 }
+
 .app_container_operators {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
