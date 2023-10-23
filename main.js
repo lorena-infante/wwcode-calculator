@@ -1,80 +1,48 @@
-const result = document.getElementById('result');
-const summary = document.getElementById('summary');
-//aux variables
-let numbersArr = [];
-let joinedNums = [];
-//operators
-const del = 'del'
-const add = '+'
-const minus = '-'
-const decimal = '.'
-const divide = '/'
-const times = 'x'
-const reset = 'res';
-const equals = '=';
+//output on screen
+let totalResult = document.getElementById('result');
+let summary = document.getElementById('summary');
+let summDisplay;
+// let joinedSumArray = summArray.join('');
 
-function showInput(input) {
-    numbersArr.push(input);
-    joinedNums = numbersArr.join('');
+//numeric keys pressed
+const zero = document.getElementById('zero');
+const one = document.getElementById('one');
+const two = document.getElementById('two');
+const three = document.getElementById('three');
+const four = document.getElementById('four');
+const five = document.getElementById('five');
+const six = document.getElementById('six');
+const seven = document.getElementById('seven');
+const eight = document.getElementById('eight');
+const nine = document.getElementById('nine');
 
-    if (numbersArr.length != 0) {
-        summary.innerHTML = `${joinedNums}`;
-    } else {
-        summary.innerHTML = `0`;
-    }
-    if (input === reset) {
-        resetScreen(input);
-    }
-    /*else if (input === equals) {
-        console.log(joinedNums);
-        if(joinedNums )
-        result.innerHTML=`${joinedNums}`;
-       
-    }*/
-}
+//operator keys pressed
+const del = document.getElementById('del');
+const add = document.getElementById('add');
+const minus = document.getElementById('minus');
+const decimal = document.getElementById('decimal');
+const divide = document.getElementById('divide');
+const multiply = document.getElementById('multiply');
+const reset = document.getElementById('reset');
+const equals = document.getElementById('equals');
 
+//aux funct
+//function addNumberToScreen
 
-function resetScreen(input) {
-    numbersArr = [];
-    summary.innerHTML = `0`;
-}
+//anonym functions
 
+five.addEventListener('click', () => {
+    const stringToNumber = Number (five.innerHTML);
+    console.log(`this is the number: ${stringToNumber}`);
+    //  summArray.push(stringToNumber);
+    //  joinedSumArray = summArray.join('');    
+    //return stringToNumber and push
+    summary.innerHTML = `${stringToNumber}`;
+   
+})
 
-
-function sum() { }
-function reduce() { }
-function multiply() { }
-function div() { }
-
-function dele() { }
-
-
-function addOperator(operator) {
-    if (operator === add) {
-        summary.innerHTML = `${joinedNums} ${add}`;
-
-    } else if (operator === minus) {
-        summary.innerHTML = `${joinedNums} ${minus}`;
-
-    } else if (operator === decimal) {
-        summary.innerHTML = `${joinedNums} ${decimal}`;
-
-    } else if (operator === divide) {
-        summary.innerHTML = `${joinedNums} ${divide}`;
-
-    } else if (operator === times) {
-        summary.innerHTML = `${joinedNums} ${times}`;
-
-    } else if (operator === del) {
-        summary.innerHTML = `${joinedNums} ${del}`;
-
-    } else if (operator === equals) {
-        summary.innerHTML = `${joinedNums} ${equals}`;
-
-    } else if (operator === reset) {
-        summary.innerHTML = `0`;
-    } else {
-        summary.innerHTML = `0`;
-    }
-}
-
+add.addEventListener('click', () => {
+    //  const stringToNumber = Number (five.innerHTML);
+    summary.innerHTML = `${add.innerHTML}`;
+    console.log(add.innerHTML);
+})
