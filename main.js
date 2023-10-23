@@ -1,7 +1,7 @@
 const result = document.getElementById('result');
 const summary = document.getElementById('summary');
 //aux variables
-const numbersArr = [];
+let numbersArr = [];
 let joinedNums = [];
 //operators
 const del = 'del'
@@ -13,60 +13,68 @@ const times = 'x'
 const reset = 'res';
 const equals = '=';
 
-
-/* let addBtn = document.querySelector('#add');
-addBtn.addEventListener('click', showInput());
-
-let minusBtn = document.querySelector('#minus');
-minusBtn.addEventListener('click', addOperator());
-
-let decimalBtn = document.querySelector('#decimal');
-decimalBtn.addEventListener('click', addOperator());
-
-let divideBtn = document.querySelector('#divide');
-divideBtn.addEventListener('click', addOperator()); */
-
-
-
 function showInput(input) {
     numbersArr.push(input);
     joinedNums = numbersArr.join('');
-    
-    summary.innerHTML = `${joinedNums}`;
+
+    if (numbersArr.length != 0) {
+        summary.innerHTML = `${joinedNums}`;
+    } else {
+        summary.innerHTML = `0`;
+    }
+    if (input === reset) {
+        resetScreen(input);
+    }
+    /*else if (input === equals) {
+        console.log(joinedNums);
+        if(joinedNums )
+        result.innerHTML=`${joinedNums}`;
+       
+    }*/
 }
 
+
+function resetScreen(input) {
+    numbersArr = [];
+    summary.innerHTML = `0`;
+}
+
+
+
+function sum() { }
+function reduce() { }
+function multiply() { }
+function div() { }
+
+function dele() { }
+
+
 function addOperator(operator) {
-    if(operator === add){
+    if (operator === add) {
         summary.innerHTML = `${joinedNums} ${add}`;
-       
-    }else if (operator === minus) {
+
+    } else if (operator === minus) {
         summary.innerHTML = `${joinedNums} ${minus}`;
-        
-    } else if (operator === decimal){
+
+    } else if (operator === decimal) {
         summary.innerHTML = `${joinedNums} ${decimal}`;
 
-    }else if (operator === divide){
+    } else if (operator === divide) {
         summary.innerHTML = `${joinedNums} ${divide}`;
-        
-    }else if (operator === times){
+
+    } else if (operator === times) {
         summary.innerHTML = `${joinedNums} ${times}`;
-       
-    }else if (operator === del){
+
+    } else if (operator === del) {
         summary.innerHTML = `${joinedNums} ${del}`;
-        
-    }else if (operator === equals){
+
+    } else if (operator === equals) {
         summary.innerHTML = `${joinedNums} ${equals}`;
-        
-    }else if (operator === reset){
+
+    } else if (operator === reset) {
         summary.innerHTML = `0`;
-    }else {
+    } else {
         summary.innerHTML = `0`;
     }
 }
 
-function sum(){}
-function reduce(){}
-function multiply(){}
-function div(){}
-function res(){}
-function dele(){}
